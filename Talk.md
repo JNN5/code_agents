@@ -12,13 +12,13 @@
 
 ## Outline
 1. Introduction (3 minutes)
-    - Brief introduction and session objectives
-    - GenAI from simple prompts to agentic workflows (quick and simple)
+    - Brief introduction and session objectives (slide 1)
+    - GenAI from simple prompts to agentic workflows (quick and simple) (slide 2)
 
-2. Understanding Code Agents (5 minutes)
-    - Limitation of traditional Agents
-    - Definition and characteristics of code agents
-    - Why generating code can be superior to generating JSON
+2. Understanding Code Agents (4 minutes)
+    - Limitation of traditional Agents (slide 3 left)
+    - Definition and characteristics of code agents (slide 3 right)
+    - Why generating code can be superior to generating JSON (slide 4)
 
 <!-- 3. Code Agent Architecture/Flow (15 minutes)
     - Core components of effective code agents
@@ -31,17 +31,17 @@
         - Format checking
         - Code interpretation and testing -->
 
-4. Implementation with smolagents (5 minutes)
-    - Introduction to the smolagents framework
+4. Implementation with smolagents (7 minutes)
+    - Introduction to the smolagents framework (slide 5)
     <!-- - Building a repository-aware code agent using smolagents -->
-    - Demo: Implementing the five essential tools within smolagents
-    - Code walkthrough of a complete agent implementation
+    - Recorded Demo: Implementing the five essential tools within smolagents (slide 6)
+    - Code walkthrough of a complete agent implementation (slide 6)
 
-5. Security considerations (5 minutes)
-    - Model security applies
-    - Code Execution environment
-    - Dependency Management
-    - Secure handling of execution feedback
+5. Key security considerations (4 minutes)
+    <!-- - Model security applies -->
+    - Code Execution environment (slide 7)
+    - Dependency Management (slide 7)
+    - Secure handling of execution feedback (slide 7)
 
-6. Conclusion (2 minutes)
-   - Key takeaways
+6. Conclusion / Call to action (2 minutes)
+   - Key takeaways / call to action (slide 8)
