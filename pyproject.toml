@@ -1,0 +1,10 @@
+[project]
+name = "code-agents"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "duckduckgo-search>=8.0.1",
+    "smolagents[litellm,mlx-lm]>=1.15.0",
+]

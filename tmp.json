@@ -1,0 +1,120 @@
+{
+    "journeys":{
+        "flycruise": {
+            "origin": "FLIGHT",
+            "destination": "CRUISE",
+            "tracking_points": {
+                "exptected": {
+                    "status": "exptected",
+                    "location": null,
+                    "menu_category": null,
+                    "menu_item": null,
+                    "next_tracking_points": ["flycruise.identified", "flycruise.security_passed", "flycruise.security_failed"],
+                    "required_inputs": {},
+                    "is_initial_state": true,
+                    "cognito_groups": ["flycruise_gha"],
+                    "mass_update_from": []
+                },
+                "identified": {
+                    "status": "identified",
+                    "location": "arrival belt",
+                    "menu_category": "Airside",
+                    "menu_item": "Scan at arrival belt",
+                    "next_tracking_points": ["flycruise.security_passed", "flycruise.security_failed"],
+                    "required_inputs": {},
+                    "is_initial_state": true,
+                    "cognito_groups": ["flycruise_gha"],
+                    "mass_update_from": []
+                },
+                "security_passed": {
+                    "status": "security_passed",
+                    "location": "security scanner",
+                    "menu_category": "Security Scanning",
+                    "menu_item": "Scan Bags - Security Passed",
+                    "next_tracking_points": ["flycruise.approved_for_transport"],
+                    "required_inputs": {},
+                    "is_initial_state": false,
+                    "cognito_groups": ["flycruise_gha"],
+                    "mass_update_from": []
+                },
+                "security_failed": {
+                    "status": "security_failed",
+                    "location": "security scanner",
+                    "menu_category": "Security Scanning",
+                    "menu_item": "Scan Bags - Security Failed",
+                    "next_tracking_points": [],
+                    "required_inputs": {},
+                    "is_initial_state": false,
+                    "cognito_groups": ["flycruise_gha"],
+                    "mass_update_from": []
+                },
+                "cage": {
+                    "status": null,
+                    "location": "cage",
+                    "menu_category": "Cage",
+                    "menu_item": "Scan Bags at Cage",
+                    "next_tracking_points": [],
+                    "required_inputs": {},
+                    "is_initial_state": false,
+                    "cognito_groups": ["flycruise_gha"],
+                    "mass_update_from": []
+                },
+                "approved_for_transport": {
+                    "status": "approved_for_transport",
+                    "location": null,
+                    "menu_category": null,
+                    "menu_item": null,
+                    "next_tracking_points": ["flycruise.3pl_SKB8888A","flycruise.3pl_SKB8888B", "flycruise.3pl_SKB8888C"],
+                    "required_inputs": {},
+                    "is_initial_state": false,
+                    "cognito_groups": ["flycruise_gha", "flycruise_3pl"],
+                    "mass_update_from": []
+                },
+                "3pl_SKB8888A": {
+                    "status": "3pl_SKB8888A",
+                    "location": "SKB8888A",
+                    "menu_category": "3PL",
+                    "menu_item": "Load Bags to SKB8888A",
+                    "next_tracking_points": ["flycruise.mbccs"],
+                    "required_inputs": {},
+                    "is_initial_state": false,
+                    "cognito_groups": ["flycruise_3pl"],
+                    "mass_update_from": []
+                },
+                "3pl_SKB8888B": {
+                    "status": "3pl_SKB8888B",
+                    "location": "SKB8888B",
+                    "menu_category": "3PL",
+                    "menu_item": "Load Bags to SKB8888B",
+                    "next_tracking_points": ["flycruise.mbccs"],
+                    "required_inputs": {},
+                    "is_initial_state": false,
+                    "cognito_groups": ["flycruise_3pl"],
+                    "mass_update_from": []
+                },
+                "3pl_SKB8888C": {
+                    "status": "3pl_SKB8888C",
+                    "location": "SKB8888C",
+                    "menu_category": "3PL",
+                    "menu_item": "Load Bags to SKB8888C",
+                    "next_tracking_points": ["flycruise.mbccs"],
+                    "required_inputs": {},
+                    "is_initial_state": false,
+                    "cognito_groups": ["flycruise_3pl"],
+                    "mass_update_from": []
+                },
+                "mbccs": {
+                    "status": "Handed to MBCCS",
+                    "location": "MBCCS",
+                    "menu_category": "Handoff to MBCCS",
+                    "menu_item": "Mass Offload to MBCCS",
+                    "next_tracking_points": [],
+                    "required_inputs": {},
+                    "is_initial_state": false,
+                    "cognito_groups": ["flycruise_3pl"],
+                    "mass_update_from": ["flycruise.3pl_SKB8888A","flycruise.3pl_SKB8888B", "flycruise.3pl_SKB8888C"]
+                }
+            }
+        }
+    }
+}
