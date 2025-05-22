@@ -7,4 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "duckduckgo-search>=8.0.1",
     "smolagents[litellm,mlx-lm]>=1.15.0",
+    "strands-agents[ollama]>=0.1.3",
+    "strands-agents-builder>=0.1.1",
+    "strands-agents-tools>=0.1.2",
 ]

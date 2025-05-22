@@ -10,7 +10,8 @@ from smolagents import (
 # model = MLXModel(model_id="mlx-community/Josiefied-Qwen2.5-3B-Instruct-abliterated-v1-8-bit")
 # model = MLXModel(model_id="mlx-community/Josiefied-Qwen3-4B-abliterated-v1-8bit")
 # model = MLXModel(model_id="mlx-community/gemma-3-4b-it-4bit-DWQ")
-model = MLXModel(model_id="mlx-community/gemma-3-12b-it-4bit-DWQ")
+# model = MLXModel(model_id="mlx-community/gemma-3-12b-it-4bit-DWQ")
+model = MLXModel(model_id="mlx-community/Qwen2.5-Coder-14B-Instruct-4bit")
 prompt = "How many seconds would it take for a leopard at full speed to run through Pont des Arts?"
 
 agent = CodeAgent(
