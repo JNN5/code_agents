@@ -1,18 +1,27 @@
 from smolagents import (
-    MLXModel,
+    LiteLLMModel,
     CodeAgent, 
-    DuckDuckGoSearchTool, 
+    DuckDuckGoSearchTool,
+    tool 
 )
 
-# model = MLXModel(model_id="mlx-community/Qwen2.5-Coder-14B-Instruct-4bit")
-model = MLXModel(model_id="mlx-community/gemma-3-12b-it-4bit-DWQ")
+model = LiteLLMModel(model_id='ollama/hf.co/unsloth/Qwen2.5-Coder-14B-Instruct-128K-GGUF:Q4_K_M') 
+
+@tool
+def calculate_total_cost(activity_cost: float) -> float:
+    """
+    Calculates the total cost of the itinerary.
+    Args:
+        activity_cost (float): The cost of the activity.
+    """
+    return activity_cost + 10.0  # Assuming a fixed transport cost of 10.0 SGD
 
 agent = CodeAgent(
-    tools=[DuckDuckGoSearchTool()],
+    tools=[DuckDuckGoSearchTool(), calculate_total_cost],
     add_base_tools=True,
     model=model,
+    stream_outputs=True
 )
-
 
 activity = input("What type of activity would you prefer? E.g. Adventure, Relaxation, Culture or Entertainment: ")
 date_and_time= input("When would you like to do this activity: E.g. Tonight, Saturday morning, December holidays, etc: ")
@@ -22,17 +31,9 @@ prompt = """
 You are a travel agent in Singapore. 
 I am looking for a {activity} activity to do on {date_and_time} in Singapore. 
 My budget is {budget}. Please suggest some options. 
-Please specifically list, the itinaries with the total cost per option.
-Follow the format below:
-1. Option 1: 
-   - Itinerary: 
-   - Total Cost:
-2. Option 2:
-   - Itinerary: 
-   - Total Cost:
-3. Option 3:
-   - Itinerary: 
-   - Total Cost:
+Here are some hints:
+1. Do research first
+2. Make sure to find out the proce for each option and include it in your response.
 """.format(
     activity=activity,
     date_and_time=date_and_time,
