@@ -1,5 +1,4 @@
 from smolagents import (
-    MLXModel,
     LiteLLMModel,
     CodeAgent, 
     DuckDuckGoSearchTool, 

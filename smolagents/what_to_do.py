@@ -5,7 +5,7 @@ from smolagents import (
     tool 
 )
 
-model = LiteLLMModel(model_id='ollama/hf.co/unsloth/Qwen2.5-Coder-14B-Instruct-128K-GGUF:Q4_K_M') 
+model = LiteLLMModel(model_id='ollama/hf.co/unsloth/Seed-Coder-8B-Instruct-GGUF:Q4_K_M', num_ctx=32768) 
 
 @tool
 def calculate_total_cost(activity_cost: float) -> float:
@@ -34,6 +34,7 @@ My budget is {budget}. Please suggest some options.
 Here are some hints:
 1. Do research first
 2. Make sure to find out the proce for each option and include it in your response.
+Please also calculate the total cost of the itinerary including transport costs.
 """.format(
     activity=activity,
     date_and_time=date_and_time,
